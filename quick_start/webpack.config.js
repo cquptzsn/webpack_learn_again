@@ -12,6 +12,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.zsn/,
+                use: path.resolve(__dirname, './loader/zsn-loader.js') // 使用 zsn-loader
             }
         ]
     }
