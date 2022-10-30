@@ -1,6 +1,8 @@
 const path = require('path')
 const webpack = require('webpack') // 用于访问内置插件
 
+const FooterPlugin = require('./plugin/FooterPlugin')
+
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
@@ -23,6 +25,9 @@ module.exports = {
     plugins: [
         new webpack.BannerPlugin({
             banner: "通过 BannerPlugin 的使用来查看 webpack 运行机制"
+        }),
+        new FooterPlugin({
+            banner: '周圣楠自定义插件'
         })
     ]
 }
